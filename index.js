@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 const app = require("./app");
 
 //port
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 4000;
 
 //routes
 const purchaseRoutes = require("./src/routes/purchaseRoutes.js");
@@ -74,5 +74,5 @@ app.use((err, req, res, next) => {
 
 // Start server
 app.listen(port, () => {
-  console.log("Server is running on port 8080");
+  console.log("Server is running on port 4000");
 });
