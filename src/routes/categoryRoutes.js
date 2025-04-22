@@ -26,8 +26,8 @@ router.delete('/:id', authMiddleware(roleMap("DELETE_CATEGORY")), catchAsync(del
 
 router.get('/', catchAsync(getCategoryList));
 router.get('/:id', catchAsync(getCategory));
-router.post('/', validateCategory, catchAsync(createCategory));
-router.put('/:id', validateCategory, catchAsync(updateCategory));
+router.post('/', catchAsync(createCategory));
+router.put('/:id', catchAsync(updateCategory));
 router.delete('/:id', catchAsync(deleteCategory));
 
 module.exports = router;
