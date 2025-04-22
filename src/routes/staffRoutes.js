@@ -15,7 +15,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const profileMiddleware = require("../middlewares/profileMiddleware");
 
 const roleMap = require("../utils/roleMap");
-
+/*
 router.use(authMiddleware([], false), profileMiddleware(true));
 
 router.get('/', authMiddleware(roleMap("GET_STAFF_LIST")),  catchAsync(getStaffList));
@@ -23,5 +23,12 @@ router.get('/:id', authMiddleware(roleMap("GET_STAFF")),  catchAsync(getStaff));
 router.post('/', authMiddleware(roleMap("CREATE_STAFF")),  validateStaff, catchAsync(createStaff));
 router.put('/:id', authMiddleware(roleMap("UPDATE_STAFF")),  validateStaff, catchAsync(updateStaff));
 router.delete('/:id', authMiddleware(roleMap("DELETE_STAFF")),  catchAsync(deleteStaff));
+*/
+//router.use(authMiddleware([], false), profileMiddleware(true));
 
+router.get('/',  catchAsync(getStaffList));
+router.get('/:id',  catchAsync(getStaff));
+router.post('/',  validateStaff, catchAsync(createStaff));
+router.put('/:id', catchAsync(updateStaff));
+router.delete('/:id',  catchAsync(deleteStaff));
 module.exports = router;
