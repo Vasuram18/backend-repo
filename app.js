@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 //TODO: Change the origin to deployed frontend URL
 app.use(cors({
-    origin: "https://medical-front-git-main-vasuram18s-projects.vercel.app/",
+    origin: "https://medical-front-git-main-vasuram18s-projects.vercel.app",
     credentials: true
 }));
 
