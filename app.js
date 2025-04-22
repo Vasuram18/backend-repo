@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 //TODO: Change the origin to deployed frontend URL
 app.use(cors({
-    origin: "https://backend-repo-production-27bd.up.railway.app",
+    origin: "https://backend-repo-production-27bd.up.railway.app/",
     credentials: true
 }));
 
