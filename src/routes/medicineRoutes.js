@@ -18,14 +18,21 @@ const profileMiddleware = require("../middlewares/profileMiddleware");
 
 const roleMap = require("../utils/roleMap");
 
-router.use(authMiddleware([], false), profileMiddleware(true));
+//router.use(authMiddleware([], false), profileMiddleware(true));
 //medicines routes
-
+/*
 router.get('/', authMiddleware(roleMap("GET_MEDICINE_LIST")), catchAsync(getMedicineList));
 router.get('/expired', authMiddleware(roleMap("GET_EXPIRED_MEDICINES")), catchAsync(getExpiredMedicines));
 router.get('/:id', authMiddleware(roleMap("GET_MEDICINE")), catchAsync(getMedicine));
 router.post('/', authMiddleware(roleMap("CREATE_MEDICINE_LIST")), validateMedicine, catchAsync(createMedicineList));
 router.put('/:id', authMiddleware(roleMap("UPDATE_MEDICINE_LIST")), validateMedicine, catchAsync(updateMedicineList));
 router.delete('/:id', authMiddleware(roleMap("DELETE_MEDICINE_LIST")), catchAsync(deleteMedicineList));
+*/
+router.get('/', catchAsync(getMedicineList));
+router.get('/expired', catchAsync(getExpiredMedicines));
+router.get('/:id', catchAsync(getMedicine));
+router.post('/', catchAsync(createMedicineList));
+router.put('/:id', catchAsync(updateMedicineList));
+router.delete('/:id', catchAsync(deleteMedicineList));
 
 module.exports = router;

@@ -16,24 +16,24 @@ const roleMap = require("../utils/roleMap");
 router.route('/')
   .get(
     authMiddleware(roleMap("GET_OBSERVATION")),
-    profileMiddleware(true),
+    
     catchAsync(getAllObservations)
   );
 
 router.route('/:id')
   .get(
     authMiddleware(roleMap("GET_OBSERVATION")),
-    profileMiddleware(true),
+    
     catchAsync(getObservation)
   )
   .put(
     authMiddleware(roleMap("UPDATE_OBSERVATION")),
-    profileMiddleware(true),
+    
     catchAsync(updateObservation)
   )
   .delete(
     authMiddleware(roleMap("DELETE_OBSERVATION")),
-    profileMiddleware(true),
+    
     catchAsync(deleteObservation)
   );
 

@@ -8,10 +8,14 @@ const profileMiddleware = require("../middlewares/profileMiddleware");
 const roleMap = require("../utils/roleMap");
 
 const {getDiagnosisSymptomsList, getDiagnosisList} = require('../controllers/diagnosisController')
-
+/*
 router.use(authMiddleware([], false), profileMiddleware(true));
 
 router.get('/', authMiddleware(roleMap("GET_DIAGNOSIS_LIST")), catchAsync(getDiagnosisList));
 router.get('/symptoms', authMiddleware(roleMap("GET_DIAGNOSIS_SYMPTOMS_LIST")), catchAsync(getDiagnosisSymptomsList));
+*/
+//router.use(authMiddleware([], false), profileMiddleware(true));
 
+router.get('/', catchAsync(getDiagnosisList));
+router.get('/symptoms', catchAsync(getDiagnosisSymptomsList));
 module.exports = router;

@@ -33,7 +33,7 @@ router.get('/:id', catchAsync(getCheckupDetails));
 //router.use(authMiddleware([], false), profileMiddleware(true));
 
 router.get('/', catchAsync(getCheckupList));
-router.post('/', validateCheckup, catchAsync(createCheckup));
-router.put('/:id', validateCheckup, catchAsync(updateCheckup));
+router.post('/', catchAsync(createCheckup));
+router.put('/:id', catchAsync(updateCheckup));
 router.delete('/:id', catchAsync(deleteCheckup));
 module.exports = router;

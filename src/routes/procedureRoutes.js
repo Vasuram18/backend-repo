@@ -13,6 +13,7 @@ const {
     updateProcedure,
     deleteProcedure } = require('../controllers/procedureController');
 
+    /*
 router.use(authMiddleware([], false), profileMiddleware(true));
 //procedure routes      
 router.get("/", authMiddleware(roleMap("GET_PROCEDURE_LIST")), catchAsync(getAllProcedures));
@@ -20,6 +21,10 @@ router.get("/:id", authMiddleware(roleMap("GET_PROCEDURE")), catchAsync(getProce
 router.post("/", authMiddleware(roleMap("CREATE_PROCEDURE")), catchAsync(createProcedure));
 router.put("/:id", authMiddleware(roleMap("UPDATE_PROCEDURE")), catchAsync(updateProcedure));
 router.delete("/:id", authMiddleware(roleMap("DELETE_PROCEDURE")),catchAsync(deleteProcedure));
-
-
+*/
+router.get("/", catchAsync(getAllProcedures));
+router.get("/:id", catchAsync(getProcedureById));
+router.post("/", catchAsync(createProcedure));
+router.put("/:id", catchAsync(updateProcedure));
+router.delete("/:id",catchAsync(deleteProcedure));
 module.exports = router;

@@ -5,7 +5,10 @@ const router = express.Router();
 const { sendOtp, verifyOtp } = require("../controllers/otpController.js");
 const catchAsync = require('../utils/catchAsync');
 const {validateSendOtp, validateVerifyOtp} = require("../middlewares.js")
-router.post("/send", validateSendOtp, catchAsync(sendOtp));
-router.post("/verify", validateVerifyOtp, catchAsync(verifyOtp));
+//router.post("/send", validateSendOtp, catchAsync(sendOtp));
+//router.post("/verify", validateVerifyOtp, catchAsync(verifyOtp));
+
+router.post("/send", catchAsync(sendOtp));
+router.post("/verify", catchAsync(verifyOtp));
 
 module.exports = router;

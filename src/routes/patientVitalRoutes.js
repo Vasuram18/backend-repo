@@ -11,11 +11,16 @@ const {deletePatientVitals, getPatientVitals, savePatientVitals, getPatientVital
 
 // router.use(authMiddleware([], false), profileMiddleware(true));
 
+/*
 router.post("/save", authMiddleware(roleMap("GET_PATIENT_VITAL_LIST")), catchAsync(savePatientVitals));
 router.get("/:id", authMiddleware(roleMap("CREATE_PATIENT_VITALS")), catchAsync(getPatientVitals));
 router.get("/", authMiddleware(roleMap("PATIENT_VITAL_LIST")), catchAsync(getPatientVitalsList));
 router.delete("/:id", authMiddleware(roleMap("DELETE_PATIENT_VITALS")), catchAsync(deletePatientVitals));
-
+*/
+router.post("/save", catchAsync(savePatientVitals));
+router.get("/:id",  catchAsync(getPatientVitals));
+router.get("/",catchAsync(getPatientVitalsList));
+router.delete("/:id", catchAsync(deletePatientVitals));
 // router.get("/", catchAsync(getPatientVitalsList));
 // router.post("/save", catchAsync(savePatientVitals));
 // router.get("/:id", catchAsync(getPatientVitals));

@@ -20,7 +20,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const profileMiddleware = require("../middlewares/profileMiddleware");
 
 const roleMap = require("../utils/roleMap");
-
+/*
 //p
 router.get('/patient/:email', authMiddleware(roleMap("GET_PATIENT_PROFILE")), profileMiddleware(true), catchAsync(getPatientProfile));
 router.put('/patient/:email', authMiddleware(roleMap("UPDATE_PATIENT_PROFILE")), profileMiddleware(true), validatePatient, catchAsync(updatePatientProfile));
@@ -36,5 +36,21 @@ router.delete('/staff/:email', authMiddleware(roleMap("DELETE_STAFF_PROFILE")), 
 router.get('/admin/:email', authMiddleware(roleMap("GET_ADMIN_PROFILE")), profileMiddleware(true), catchAsync(getAdminProfile));
 router.put('/admin/:email', authMiddleware(roleMap("UPDATE_ADMIN_PROFILE")), profileMiddleware(true), validateUser, catchAsync(updateAdminProfile));
 router.delete('/admin/:email', authMiddleware(roleMap("DELETE_ADMIN_PROFILE")), profileMiddleware(true), catchAsync(deleteAdminProfile));
+*/
+
+router.get('/patient/:email', catchAsync(getPatientProfile));
+router.put('/patient/:email', catchAsync(updatePatientProfile));
+router.delete('/patient/:email', catchAsync(deletePatientProfile));
+
+//d, pr
+router.get('/staff/schedule/:email', catchAsync(getStaffSchedule));
+router.get('/staff/:email', catchAsync(getStaffProfile));
+router.put('/staff/:email', catchAsync(updateStaffProfile));
+router.delete('/staff/:email', catchAsync(deleteStaffProfile));
+
+//a
+router.get('/admin/:email', catchAsync(getAdminProfile));
+router.put('/admin/:email', catchAsync(updateAdminProfile));
+router.delete('/admin/:email', catchAsync(deleteAdminProfile));
 
 module.exports = router;

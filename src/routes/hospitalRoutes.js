@@ -9,8 +9,9 @@ const roleMap = require("../utils/roleMap");
 
 const getHospitalList = require('../controllers/hospitalController.js');
 
-router.use(authMiddleware([], false), profileMiddleware(true));
+//router.use(authMiddleware([], false), profileMiddleware(true));
 
-router.get("/", authMiddleware(roleMap("GET_HOSPITAL_LIST")), catchAsync(getHospitalList));
+//router.get("/", authMiddleware(roleMap("GET_HOSPITAL_LIST")), catchAsync(getHospitalList));
+router.get("/", catchAsync(getHospitalList));
 
 module.exports = router;
